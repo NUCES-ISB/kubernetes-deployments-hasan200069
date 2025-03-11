@@ -1,0 +1,17 @@
+Initial State (1 replicas):
+flask-app-6d989b48df-qdgh7   1/1     Running   0          4m27s
+flask-app-6d989b48df-sfcv5   1/1     Running   0          4m27s
+
+Scaling Up to 5 replicas:
+flask-app-6d989b48df-9vxlf   0/1     ContainerCreating   0          0s
+flask-app-6d989b48df-gh28c   0/1     ContainerCreating   0          0s
+flask-app-6d989b48df-qdgh7   1/1     Running             0          4m27s
+flask-app-6d989b48df-sfcv5   1/1     Running             0          4m27s
+flask-app-6d989b48df-zzvhh   0/1     ContainerCreating   0          0s
+
+Scaling Down to 2 replicas:
+flask-app-6d989b48df-9vxlf   0/1     Terminating   0          0s
+flask-app-6d989b48df-gh28c   0/1     Terminating   0          0s
+flask-app-6d989b48df-qdgh7   1/1     Running       0          4m27s
+flask-app-6d989b48df-sfcv5   1/1     Running       0          4m27s
+flask-app-6d989b48df-zzvhh   0/1     Terminating   0          0s

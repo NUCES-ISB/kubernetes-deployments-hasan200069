@@ -1,0 +1,27 @@
+Replica Configuration Analysis:
+
+1. Current Configuration:
+- Default replicas in deployment: 3 (as specified in flask-deployment.yaml)
+- Minimum replicas tested: 2 (demonstrated in scaling test)
+- Maximum replicas tested: 5 (demonstrated in scaling test)
+
+2. Deployment File Configuration:
+- The deployment file (flask-deployment.yaml) specifies replicas: 3
+- No HorizontalPodAutoscaler (HPA) is configured, which means:
+  * No automatic scaling based on metrics
+  * No enforced minimum or maximum replica constraints
+  * Manual scaling is unrestricted
+
+3. Scaling Considerations:
+- Minimum recommended replicas: 2 (for high availability)
+- Maximum recommended replicas: Based on resource availability and load requirements
+- Current scaling is manual using: kubectl scale deployment flask-app --replicas=<count>
+
+4. Recommendations for Production:
+- Implement HorizontalPodAutoscaler (HPA) for automatic scaling
+- Set minimum replicas to 2 for high availability
+- Set maximum replicas based on:
+  * Cluster resource capacity
+  * Expected peak load
+  * Cost considerations
+  * Performance requirements 
